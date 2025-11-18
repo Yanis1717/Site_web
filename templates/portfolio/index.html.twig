@@ -1,29 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}E-Portfolio{% endblock %}
+{% block title %}Portfolio{% endblock %}
 
 {% block body %}
-<h2 class="text-center mb-4">Mes compétences et preuves</h2>
+<div class="container py-5">
+    <h2 class="text-center mb-4 fw-bold">Mon E-Portfolio</h2>
 
-<div class="row g-4">
-    <div class="col-md-6">
-        <h4>Compétence 1</h4>
-        <p>Preuve / projet / analyse réflexive.</p>
-    </div>
-    <div class="col-md-6">
-        <h4>Compétence 2</h4>
-        <p>Preuve / projet / analyse réflexive.</p>
-    </div>
-</div>
-
-<div class="row g-4 mt-3">
-    <div class="col-md-6">
-        <h4>Compétence 3</h4>
-        <p>Preuve / projet / analyse réflexive.</p>
-    </div>
-    <div class="col-md-6">
-        <h4>Compétence 4</h4>
-        <p>Preuve / projet / analyse réflexive.</p>
+    <div class="ratio ratio-16x9 shadow">
+        <iframe 
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTftkprrBNDOEgxHvnqtArm0k4Ip7mgps-QpcVDqiI1IxN1d98avjMhA5iTBY8xhfqkVk-g5HqP8-Fe/pubhtml?widget=true&amp;headers=false"
+            style="width: 100%; height: 100%; border: none;">
+        </iframe>
     </div>
 </div>
 {% endblock %}

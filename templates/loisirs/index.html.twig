@@ -3,34 +3,91 @@
 {% block title %}Loisirs{% endblock %}
 
 {% block body %}
-<h2 class="mb-4 text-center">Mes loisirs et passions</h2>
-<div class="row g-4">
-    <div class="col-md-4">
-        <div class="card h-100">
-            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Loisir 1">
-            <div class="card-body">
-                <h5 class="card-title">Loisir 1</h5>
-                <p class="card-text">Description du loisir.</p>
+
+<div class="container py-5">
+    <h2 class="mb-5 text-center fw-bold">Mes loisirs et passions</h2>
+
+    <div class="row g-4">
+
+        <!-- Jeux vidéo -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <img src="{{ asset('images/jeux-video.jpg') }}" class="card-img-top" alt="Jeux vidéo">
+
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Jeux vidéo</h5>
+                    <p class="card-text">
+                        Les jeux vidéo m'aident à développer mes réflexes, mon sens stratégique
+                        et ma capacité à travailler en équipe. C’est un loisir qui me passionne
+                        et qui renforce ma réactivité et ma réflexion.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card h-100">
-            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Loisir 2">
-            <div class="card-body">
-                <h5 class="card-title">Loisir 2</h5>
-                <p class="card-text">Description du loisir.</p>
+
+        <!-- Lecture -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80"
+                     class="card-img-top" alt="Lecture">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Lecture</h5>
+                    <p class="card-text">
+                        J’aime lire, que ce soit des romans ou des livres de développement personnel. 
+                        La lecture m’aide à améliorer ma concentration,
+                        ma compréhension et ma curiosité intellectuelle.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card h-100">
-            <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Loisir 3">
-            <div class="card-body">
-                <h5 class="card-title">Loisir 3</h5>
-                <p class="card-text">Description du loisir.</p>
+
+        <!-- Sport -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <img src="{{ asset('images/basketball.jpg') }}" class="card-img-top" alt="Basketball et course à pied">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Sport : Course à pied & Basketball</h5>
+                    <p class="card-text">
+                        Le sport occupe une place importante dans ma vie. La course à pied 
+                        m’aide à dépasser mes limites, tandis que le basketball développe mon esprit 
+                        d’équipe, ma coordination et ma discipline.
+                    </p>
+                </div>
             </div>
         </div>
+
+        <!-- Piano -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <img src="{{ asset('images/piano.jpg') }}" class="card-img-top" alt="Piano">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Piano</h5>
+                    <p class="card-text">
+                        Jouer du piano me permet de stimuler ma créativité et ma patience.
+                        C’est un loisir qui demande rigueur et pratique, et qui m’aide à développer
+                        ma sensibilité artistique.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Informatique & Technologies -->
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80"
+                     class="card-img-top" alt="Informatique et technologies">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Informatique & Technologies</h5>
+                    <p class="card-text">
+                        Passionné par les réseaux, les systèmes et le développement,
+                        j’aime découvrir de nouveaux outils et expérimenter pour approfondir
+                        mes compétences techniques, en lien direct avec mon BUT R&T.
+                    </p>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+
 {% endblock %}
