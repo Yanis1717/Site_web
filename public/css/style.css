@@ -5,16 +5,18 @@
 /* Faire que le body prenne toute la hauteur */
 html, body {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* Le conteneur principal qui contient tout le contenu */
 .wrapper {
-    min-height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* La partie “body” prend tout l’espace restant */
+/* La partie "body" prend tout l'espace restant */
 .content {
     flex: 1;
 }
@@ -26,18 +28,19 @@ html, body {
   /* height: 100%; */
   /* Add your background pattern here */
   background: linear-gradient(
-    -45deg,
+    0deg,
     #00eff8,
     #afdbd1,
-    #a6ddd1,
-    #a6b3dd,
+    #53d4b8,
     #afdbd1,
     #00eff8
   );
   background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
-  height: 200%;
+  animation: gradient 20s ease infinite;
+  min-height: 100vh;
 }
+
+
 
 @keyframes gradient {
   0% {
@@ -214,6 +217,14 @@ button:hover::before {
   height: 100px;
 }
 
+.card2__avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
 .card2__title {
   margin-top: 60px;
   font-weight: 500;
@@ -257,6 +268,23 @@ button:hover::before {
   color: var(--main-color);
 }
 
+/* Flex row for side-by-side cards */
+.cards-row {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Responsive: stack cards on mobile */
+@media (max-width: 768px) {
+  .cards-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* centre la carte au milieu de la page */
 .center-page {
   display: flex;
@@ -264,4 +292,106 @@ button:hover::before {
   justify-content: center;   /* centre horizontalement */
   min-height: 60vh;          /* hauteur minimale pour le centrage vertical */
   padding: 20px;             /* espace autour sur petits écrans */
+}
+
+
+
+.card3 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  border-radius: 24px;
+  line-height: 1.6;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  margin: 2rem auto; /* centre la card horizontalement sur la page */
+}
+
+.content3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre le contenu de la card (texte, icônes) */
+  gap: 24px;
+  padding: 36px;
+  border-radius: 22px;
+  text-align: center; /* assure que le texte est centré */
+  color: #ffffff;
+  overflow: hidden;
+  background: #0a3cff;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content3::before {
+  position: absolute;
+  content: "";
+  top: -4%;
+  left: 50%;
+  width: 90%;
+  height: 90%;
+  transform: translate(-50%);
+  background: #ced8ff;
+  z-index: -1;
+  transform-origin: bottom;
+
+  border-radius: inherit;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content3::after {
+  position: absolute;
+  content: "";
+  top: -8%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  transform: translate(-50%);
+  background: #e7ecff;
+  z-index: -2;
+  transform-origin: bottom;
+  border-radius: inherit;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content3 svg {
+  width: 48px;
+  height: 48px;
+}
+
+.content3 .para3 {
+  z-index: 1;
+  opacity: 1;
+  font-size: 18px;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content3 .link {
+  z-index: 1;
+  color: #fea000;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.content3 .link:hover {
+  text-decoration: underline;
+}
+
+.card3:hover {
+  transform: translate(0px, -16px);
+}
+
+.card3:hover .content3::before {
+  rotate: -8deg;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card3:hover .content3::after {
+  rotate: 8deg;
+  top: 0;
+  width: 100%;
+  height: 100%;
 }
