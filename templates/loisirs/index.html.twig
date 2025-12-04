@@ -1,102 +1,186 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Loisirs{% endblock %}
+{% block title %}Mes Loisirs{% endblock %}
 
 {% block body %}
 
-<div class="container py-5">
-    <h2 class="mb-5 text-center fw-bold">Mes loisirs et passions</h2>
+<style>
+    /* Style de base des cartes */
+    .full-width-card {
+        width: 100%;
+        border: none !important;
+        border-radius: 0 !important;
+        margin-bottom: 0 !important;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer; /* Le curseur devient une main pour montrer qu'on peut cliquer */
+    }
 
+    /* L'image */
+    .full-width-card img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        filter: brightness(0.6); /* Un peu plus sombre pour le contraste */
+        transition: all 0.5s ease;
+    }
 
+    /* Effet au survol : on éclaircit un peu l'image */
+    .full-width-card:hover img {
+        transform: scale(1.02);
+        filter: brightness(0.8);
+    }
 
-    <div class="row g-4">
+    /* Le texte sur l'image */
+    .card-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        width: 90%;
+        z-index: 2;
+        pointer-events: none; /* Permet de cliquer "au travers" du texte */
+    }
 
-        <!-- Jeux vidéo -->
-        <div class="card-container">
-            <div class="card">
-            <div class="front-content">
-                <p><img src="{{ asset('images/jeux-video.jpg') }}" class="card-img-top card-img-cover" alt="Jeux vidéo"></p>
-            </div>
-            <div class="content">
-                <p class="heading">Jeux vidéo</p>
-                <p>
-                    Les jeux vidéo m'aident à développer mes réflexes, mon sens stratégique
-                    et ma capacité à travailler en équipe. C’est un loisir qui me passionne
-                    et qui renforce ma réactivité et ma réflexion.
-                </p>
-            </div>
-        </div>
-        </div>
+    .card-overlay h3 {
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    }
+    
+    /* Le petit indice visuel "Cliquez pour en savoir plus" */
+    .click-hint {
+        font-size: 0.9rem;
+        margin-top: 10px;
+        opacity: 0.8;
+        font-style: italic;
+    }
 
-        <!-- Lecture -->
-        <div class="card-container">
-            <div class="card">
-            <div class="front-content">
-                <p><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80" class="card-img-top card-img-cover" alt="Lecture"></p>
-            </div>
-            <div class="content">
-                <p class="heading">Lecture</p>
-                <p>
-                        J’aime lire, que ce soit des romans ou des livres de développement personnel. 
-                        La lecture m’aide à améliorer ma concentration,
-                        ma compréhension et ma curiosité intellectuelle.
-                </p>
-            </div>
-        </div>
-        </div>
+    /* La zone de texte cachée qui apparaît au clic */
+    .hidden-content {
+        background-color: #f8f9fa; /* Fond gris très clair */
+        border-bottom: 1px solid #ddd;
+        box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+    }
+    
+    /* Style du texte détaillé */
+    .detail-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+        max-width: 900px;
+        margin: 0 auto; /* Centre le texte */
+    }
+</style>
 
-        <!-- Sport -->
-        <div class="card-container">
-            <div class="card">
-            <div class="front-content">
-                <p><img src="{{ asset('images/basketball.jpg') }}" class="card-img-top card-img-cover" alt="Sport"></p>
-            </div>
-            <div class="content">
-                <p class="heading">Sport</p>
-                <p>
-                        Le sport occupe une place importante dans ma vie. La course à pied 
-                        m’aide à dépasser mes limites, tandis que le basketball développe mon esprit 
-                        d’équipe, ma coordination et ma discipline.
-                </p>
-            </div>
-        </div>
-        </div>
+<div class="container mt-5 mb-4 text-center">
+    <h1 class="fw-bold" style="color: #5e84c0;">MES LOISIRS & PASSIONS</h1>
+    <p class="lead text-muted">Cliquez sur une image pour découvrir les détails.</p>
+</div>
 
-        <!-- Piano -->
-    <div class="card-container">
-            <div class="card">
-            <div class="front-content">
-                <p><img src="{{ asset('images/piano.jpg') }}" class="card-img-top card-img-cover" alt="Piano"></p>
-            </div>
-            <div class="content">
-                <p class="heading">Piano</p>
-                <p>
-                        Jouer du piano me permet de stimuler ma créativité et ma patience.
-                        C’est un loisir qui demande rigueur et pratique, et qui m’aide à développer
-                        ma sensibilité artistique.
-                </p>
-            </div>
-        </div>
-        </div>
+<div class="container-fluid px-0">
 
-        <!-- Informatique & Technologies -->
-    <div class="card-container">
-            <div class="card">
-            <div class="front-content">
-                <p><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80" class="card-img-top card-img-cover" alt="Informatique et technologies"></p>
-            </div>
-            <div class="content">
-                <p class="heading">Informatique</p>
-                <p>
-                        Passionné par les réseaux, les systèmes et le développement,
-                        j’aime découvrir de nouveaux outils et expérimenter pour approfondir
-                        mes compétences techniques.
-                </p>
-            </div>
+    <div class="card full-width-card" data-bs-toggle="collapse" data-bs-target="#detail-jeux" aria-expanded="false">
+        <img src="{{ asset('images/jeux-video.jpg') }}" alt="Jeux vidéo">
+        <div class="card-overlay">
+            <h3>Jeux vidéo</h3>
+            <p>Réflexes & Stratégie</p>
+            <div class="click-hint"><i class="fas fa-chevron-down me-2"></i>En savoir plus</div>
         </div>
-        </div>
-
     </div>
+
+    <div class="collapse hidden-content" id="detail-jeux">
+        <div class="container py-5">
+            <h4 class="fw-bold mb-3" style="color: #5e84c0;">Pourquoi les jeux vidéo ?</h4>
+            <div class="detail-text">
+                <p>Bien plus qu'un simple divertissement, les jeux vidéo m'ont appris à résoudre des problèmes complexes sous pression. Que ce soit dans la gestion de ressources ou la coordination d'équipe lors de parties compétitives, je développe ma capacité d'analyse et ma réactivité.</p>
+                <p>C'est aussi un moyen pour moi de rester connecté aux avancées technologiques (moteurs graphiques, IA, réseaux) qui sont au cœur de ma formation.</p>
+            </div>
+        </div>
+    </div>
+
+
+<div class="card full-width-card" data-bs-toggle="collapse" data-bs-target="#detail-lecture" aria-expanded="false">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80" alt="Lecture">
+        <div class="card-overlay">
+            <h3>Lecture</h3>
+            <p>Imagination & Évasion</p>
+            <div class="click-hint"><i class="fas fa-chevron-down me-2"></i>En savoir plus</div>
+        </div>
+    </div>
+
+    <div class="collapse hidden-content" id="detail-lecture">
+        <div class="container py-5">
+            <h4 class="fw-bold mb-3" style="color: #5e84c0;">L'évasion par les romans</h4>
+            <div class="detail-text">
+                <p>Je suis un lecteur amateur de romans. Que ce soit pour l'intrigue captivante d'un thriller ou l'univers créatif de la science-fiction, la lecture est pour moi une véritable porte d'évasion.</p>
+                <p>Au-delà du plaisir, cela nourrit mon imagination et améliore ma concentration. C'est une pause indispensable qui me permet de me ressourcer pour revenir plus efficace sur mes projets techniques.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card full-width-card" data-bs-toggle="collapse" data-bs-target="#detail-sport" aria-expanded="false">
+        <img src="{{ asset('images/basketball.jpg') }}" alt="Sport">
+        <div class="card-overlay">
+            <h3>Sport</h3>
+            <p>Basketball & Running</p>
+            <div class="click-hint"><i class="fas fa-chevron-down me-2"></i>En savoir plus</div>
+        </div>
+    </div>
+
+    <div class="collapse hidden-content" id="detail-sport">
+        <div class="container py-5">
+            <h4 class="fw-bold mb-3" style="color: #5e84c0;">Un esprit sain dans un corps sain</h4>
+            <div class="detail-text">
+                <p>Le sport est essentiel à mon équilibre. Le Basketball m'a enseigné les valeurs du collectif : on ne gagne jamais seul. Savoir faire confiance à ses coéquipiers et communiquer efficacement sur le terrain sont des compétences que je transpose dans mes projets de groupe.</p>
+                <p>La course à pied, quant à elle, travaille mon endurance et ma persévérance face à l'effort.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card full-width-card" data-bs-toggle="collapse" data-bs-target="#detail-piano" aria-expanded="false">
+        <img src="{{ asset('images/piano.jpg') }}" alt="Piano">
+        <div class="card-overlay">
+            <h3>Piano</h3>
+            <p>Créativité & Rigueur</p>
+            <div class="click-hint"><i class="fas fa-chevron-down me-2"></i>En savoir plus</div>
+        </div>
+    </div>
+
+    <div class="collapse hidden-content" id="detail-piano">
+        <div class="container py-5">
+            <h4 class="fw-bold mb-3" style="color: #5e84c0;">Ma sensibilité artistique</h4>
+            <div class="detail-text">
+                <p>L'informatique est logique, la musique est émotion. Jouer du piano me permet de développer ma créativité. L'apprentissage d'un morceau demande une rigueur absolue et une patience à toute épreuve, des qualités que j'applique lorsque je dois débugger un code complexe.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card full-width-card" data-bs-toggle="collapse" data-bs-target="#detail-info" aria-expanded="false">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80" alt="Informatique">
+        <div class="card-overlay">
+            <h3>Informatique & Technologies</h3>
+            <p>Réseaux, Systèmes & Développement</p>
+            <div class="click-hint"><i class="fas fa-chevron-down me-2"></i>En savoir plus</div>
+        </div>
+    </div>
+
+    <div class="collapse hidden-content" id="detail-info">
+        <div class="container py-5">
+            <h4 class="fw-bold mb-3" style="color: #5e84c0;">Ma passion, mon futur métier</h4>
+            <div class="detail-text">
+                <p>Plus qu'un loisir, l'informatique est le fil conducteur de mon parcours. J'aime découvrir de nouveaux outils et expérimenter pour approfondir mes compétences techniques.</p>
+                <p>Que ce soit la configuration d'équipements réseaux, l'administration système sous Linux ou le développement web avec Symfony, chaque projet est une opportunité de comprendre le fonctionnement profond des technologies qui nous entourent.</p>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 {% endblock %}

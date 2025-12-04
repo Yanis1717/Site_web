@@ -1,24 +1,150 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CV{% endblock %}
+{% block title %}Mon CV - Yanis LAÏD{% endblock %}
 
 {% block body %}
-<h2 class="text-center mb-4">Intitulé du poste de mes rêves</h2>
 
-<h3>Formations</h3>
-<ul>
-    <li>BUT Réseaux et Télécommunications – IUT de Roanne</li>
-</ul>
+<style>
+    /* Petite personnalisation pour les titres de sections */
+    .section-title {
+        color: #5e84c0;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-bottom: 2px solid #5e84c0;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        display: inline-block;
+    }
 
-<h3>Expériences professionnelles</h3>
-<ul>
-    <li>Stage / Alternance – Entreprise Exemple</li>
-</ul>
+    /* Style pour la timeline des expériences/formations */
+    .timeline-item {
+        border-left: 3px solid #5e84c0;
+        padding-left: 20px;
+        margin-bottom: 30px;
+        position: relative;
+    }
 
-<h3>Compétences</h3>
-<ul>
-    <li>HTML / CSS / Bootstrap</li>
-    <li>PHP / Symfony</li>
-    <li>Réseaux / TCP-IP</li>
-</ul>
+    /* Le petit point sur la ligne temporelle */
+    .timeline-item::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        background: #5e84c0;
+        border-radius: 50%;
+        position: absolute;
+        left: -7.5px;
+        top: 5px;
+    }
+
+    .date-badge {
+        background-color: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+</style>
+
+<div class="container mt-5 mb-5">
+    
+    <div class="text-center mb-5 p-5 bg-light rounded-3 shadow-sm border">
+        <h1 class="display-4 fw-bold text-dark">Yanis LAÏD</h1>
+        <h2 class="h3 mt-3" style="color: #5e84c0;">ADMINISTRATEUR RÉSEAUX & SÉCURITÉ</h2>
+        <p class="lead text-muted mt-3">Étudiant passionné en quête d'opportunités en alternance</p>
+    </div>
+
+    <div class="row">
+        
+        <div class="col-lg-8">
+            
+            <div class="mb-5">
+                <h3 class="section-title"><i class="fas fa-briefcase me-2"></i>Projets & Expériences</h3>
+                
+                <div class="timeline-item">
+                    <span class="date-badge">2025 - Présent</span>
+                    <h4 class="fw-bold">Projets Tutorés (SAÉ)</h4>
+                    <h5 class="text-muted">IUT de Roanne</h5>
+                    <p class="mt-2">
+                        Mise en situation professionnelle à travers divers projets techniques :
+                    </p>
+                    <ul>
+                        <li>Configuration d'équipements réseaux (Cisco).</li>
+                        <li>Déploiement de services sous Linux.</li>
+                        <li>Développement d'un site web dynamique (Portfolio).</li>
+                    </ul>
+                </div>
+
+                </div>
+
+            <div class="mb-5">
+                <h3 class="section-title"><i class="fas fa-graduation-cap me-2"></i>Formations</h3>
+                
+                <div class="timeline-item">
+                    <span class="date-badge">2025 - Présent</span>
+                    <h4 class="fw-bold">BUT Réseaux et Télécommunications</h4>
+                    <h5 class="text-muted">IUT de Roanne</h5>
+                    <p>Apprentissage des architectures réseaux, administration système et développement.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="date-badge">2023</span>
+                    <h4 class="fw-bold">Baccalauréat Général</h4>
+                    <h5 class="text-muted">Lycée Hippolyte Carnot</h5>
+                    <p>Spécialités : Sciences de l'ingénieur, Mathématiques, Numérique et sciences informatiques, Mention Assez Bien.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-4">
+            
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body">
+                    <h3 class="section-title h4"><i class="fas fa-laptop-code me-2"></i>Compétences</h3>
+                    
+                    <h5 class="fw-bold mt-3 h6">Développement Web</h5>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge bg-primary">HTML5 / CSS3</span>
+                        <span class="badge bg-primary">Symfony 6/7</span>
+                        <span class="badge bg-primary">PHP</span>
+                        <span class="badge bg-secondary">Bootstrap</span>
+                        <span class="badge bg-secondary">JavaScript</span>
+                    </div>
+
+                    <h5 class="fw-bold mt-3 h6">Réseaux & Systèmes</h5>
+                    <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge bg-dark">Cisco IOS</span>
+                        <span class="badge bg-dark">Linux (Debian/Ubuntu)</span>
+                        <span class="badge bg-dark">Windows Server</span>
+                        <span class="badge bg-dark">Python</span>
+                    </div>
+
+                    <h5 class="fw-bold mt-3 h6">Outils & Autres</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-info text-dark">Git / GitHub</span>
+                        <span class="badge bg-info text-dark">VS Code</span>
+                        <span class="badge bg-info text-dark">Packet Tracer</span>
+                        <span class="badge bg-info text-dark">Anglais (B2)</span>
+                        </div>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm bg-light">
+                <div class="card-body">
+                    <h3 class="section-title h4"><i class="fas fa-user-check me-2"></i>Atouts</h3>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Esprit d'équipe (Basket)</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Rigueur & Persévérance (Piano)</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Curiosité technique</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Autonomie</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 {% endblock %}

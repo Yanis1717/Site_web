@@ -10,12 +10,79 @@
     
     <!-- CSS personnalisé -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <style>
+    
+
+    .fond {
+    /* Un dégradé subtil du bleu clair vers le gris */
+    background: linear-gradient(135deg, #f5f7fa 0%, #6190dbff 100%); /* Couleur de fond dégradée */
+    
+    /* Fixe le fond pour qu'il ne bouge pas quand on scrolle */
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    }
+
+
+
+
+    .navbar-custom {
+    background: #5e84c0ff !important; /* Couleur de la Navbar */
+    backdrop-filter: blur(10px);               /* Effet de flou à l'arrière */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Ligne subtile en bas */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);     /* Légère ombre */
+    }
+
+
+
+
+
+
+    button {
+    padding: 15px 25px;
+    border: unset;
+    border-radius: 15px;
+    color: #ffffff;
+    z-index: 1;
+    background: #000000;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+    transition: all 250ms;
+    overflow: hidden;
+    }
+
+    button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: 15px;
+    background-color: #ffffff;
+    z-index: -1;
+    transition: all 250ms
+    }
+
+    button:hover {
+    color: #000000;
+    }
+
+    button:hover::before {
+    width: 100%;
+    }
+
+
+
+    </style>
 </head>
 <body class="fond">
 <div class="wrapper d-flex flex-column min-vh-100">
 
     <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
     <div class="container">
         <a class="navbar-brand" href="{{ path('app_home') }}">Portfolio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

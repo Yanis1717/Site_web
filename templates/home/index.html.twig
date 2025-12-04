@@ -4,11 +4,119 @@
 
 {% block body %}
 
-    <div class="container">
-        <h1 class="display-4 fw-bold">LAÏD Yanis</h1>
-        <p class="lead">Bienvenue sur mon portfolio Symfony</p>
-    </div>
-    
+<style>
+
+
+.card2 {
+  --main-color: #000;
+  --submain-color: #78858F;
+  --bg-color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: relative;
+  width: 300px;
+  height: 384px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background: var(--bg-color);
+}
+
+.card2__img {
+  height: 192px;
+  width: 100%;
+}
+
+.card2__img svg {
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.card2__avatar {
+  position: absolute;
+  width: 114px;
+  height: 114px;
+  background: var(--bg-color);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: calc(50% - 57px);
+}
+
+.card2__avatar svg {
+  width: 100px;
+  height: 100px;
+}
+
+.card2__avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.card2__title {
+  margin-top: 60px;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--main-color);
+}
+
+.card2__subtitle {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--submain-color);
+}
+
+.card2__btn {
+  margin-top: 15px;
+  width: 76px;
+  height: 31px;
+  border: 2px solid var(--main-color);
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--main-color);
+  background: var(--bg-color);
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.card2__btn-solid {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.card2__btn:hover {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.card2__btn-solid:hover {
+  background: var(--bg-color);
+  color: var(--main-color);
+}
+
+.bg-bleu-perso {
+        background-color: #5e84c0 !important; /* Votre bleu exact */
+        color: white !important;               /* Texte en blanc */
+}
+
+</style>
+
+
+
+
+
+<div class="container text-center mb-5">
+    <h1 class="display-4 fw-bold">Yanis LAÏD</h1>
+    <h2 class="h3 text-muted">Futur expert en Réseaux & Télécoms | Développeur Web</h2>
+    <p class="lead mt-3">À la recherche d'une alternance / d'un stage pour [Mois/Année]</p>
+
+</div>
 
 
 
@@ -20,33 +128,47 @@
       <img src="{{ asset('images/Raphinha.jpg') }}" alt="Photo de Raphinha">
     </div>
     <div class="card2__title">Yanis LAÏD</div>
-    <div class="card2__subtitle">BUT R&T</div>
+    <div class="card2__subtitle">Etudiant en BUT R&T</div>
+
     <div class="card2__wrapper">
-        
+        <div class="card2__subtitle">IUT de Roanne</div>
       </div>
     </div>
-
-    <div class="card3">
-  <div class="content3">
-    <svg
-      fill="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M20 9V5H4V9H20ZM20 11H4V19H20V11ZM3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3ZM5 12H8V17H5V12ZM5 6H7V8H5V6ZM9 6H11V8H9V6Z"
-      ></path>
-    </svg>
-    <p class="para3">
-      Ici, je présente mes loisirs, mes passions, mes envies et mes projets, accompagnés de photos et de courtes descriptions pour en savoir plus.
-    </p>
-    <li class="nav-item me-2">
-        <button class="btn btn-outline-light" type="button" onclick="location.href='{{ path('app_loisirs') }}'">Loisirs</button>
-    </li>
-
-      </div>
-    </div>
-  </div>
+  </div>  
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container my-5">
+    <div class="p-5 bg-bleu-perso border rounded-3 shadow-sm">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2 class="fw-bold text-white mb-3">Pour en savoir plus</h2>
+                <p class="lead mb-0 text-white">
+                    Découvrez mon univers en images. J'y partage mes <strong>loisirs</strong>, 
+                    mes <strong>passions</strong>, ainsi que les <strong>projets</strong> qui me tiennent à cœur.
+                </p>
+            </div>
+            <div class="col-lg-4 text-center mt-4 mt-lg-0">
+                <button class="btn btn-light btn-lg px-4" onclick="location.href='{{ path('app_loisirs') }}'">
+                    <i class="fas fa-file-alt me-2"></i>Explorer ma galerie
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 {% endblock %}
