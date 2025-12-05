@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accès CV{% endblock %}
+
+{% block body %}
+<div class="container mt-5 text-center">
+    
+    <div class="alert alert-success py-5 shadow-sm">
+        <h1 class="display-4 fw-bold">Merci {{ prenom }} !</h1>
+        <p class="lead">Vous avez désormais accès à mon Curriculum Vitae.</p>
+        <hr class="my-4">
+        
+        <p>Choisissez le format qui vous convient :</p>
+        
+        <div class="d-flex justify-content-center gap-3 mt-4">
+            <a href="{{ asset('cv/mon_cv.pdf') }}" target="_blank" class="btn btn-danger btn-lg">
+                <i class="fas fa-file-pdf me-2"></i>Voir & Imprimer (PDF)
+            </a>
+
+            <a href="{{ asset('cv/mon_cv.docx') }}" download class="btn btn-primary btn-lg">
+                <i class="fas fa-file-word me-2"></i>Télécharger (DOCX)
+            </a>
+        </div>
+        
+        <div class="mt-5">
+            <a href="{{ path('app_home') }}" class="text-muted">Retour à l'accueil</a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
