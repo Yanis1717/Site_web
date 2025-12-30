@@ -1,16 +1,247 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Portfolio{% endblock %}
+{% block title %}Mes Projets - Yanis LAÏD{% endblock %}
 
 {% block body %}
-<div class="container py-5">
-    <h2 class="text-center mb-4 fw-bold">Mon E-Portfolio</h2>
 
-    <div class="ratio ratio-16x9 shadow">
-        <iframe 
-            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTftkprrBNDOEgxHvnqtArm0k4Ip7mgps-QpcVDqiI1IxN1d98avjMhA5iTBY8xhfqkVk-g5HqP8-Fe/pubhtml?widget=true&amp;headers=false"
-            style="width: 100%; height: 100%; border: none;">
-        </iframe>
+<style>
+    /* Votre bleu personnalisé */
+    .text-bleu-perso { color: #5e84c0 !important; }
+    .bg-bleu-perso { background-color: #5e84c0 !important; color: white; }
+
+    /* Style des cartes projets */
+    .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        border-radius: 15px;
+        overflow: hidden; /* Important pour que l'image suive les bords arrondis */
+        height: 100%;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+    }
+
+    /* Style des images */
+    .project-img {
+        height: 200px;
+        object-fit: cover; /* L'image remplit la zone sans être déformée */
+        width: 100%;
+        border-bottom: 3px solid #5e84c0; /* Petit rappel de couleur sous l'image */
+    }
+
+    /* Badges */
+    .skill-badge {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+        border-radius: 20px;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        color: #495057;
+        font-weight: 600;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+</style>
+
+<div class="container mt-5 mb-5">
+    
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold">Mes Projets</h1>
+        <p class="lead text-muted">Aperçu de mes réalisations techniques en <span class="text-bleu-perso fw-bold">Réseaux</span> et <span class="text-bleu-perso fw-bold">Télécommunication</span>.</p>
+        <hr class="w-25 mx-auto text-bleu-perso" style="opacity: 1; height: 3px;">
+    </div>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="card project-card shadow-sm">
+                <img src="{{ asset('images/sae102.png') }}" alt="Architecture Réseau" class="project-img">
+                
+                <div class="card-body p-4 d-flex flex-column">
+                    <h3 class="h5 fw-bold mb-2">Conception & Administration LAN</h3>
+                    <p class="text-bleu-perso small fw-bold mb-3">SAÉ 1.02</p>
+                    
+                    <p class="card-text text-muted flex-grow-1">
+                        Création complète d'un réseau d'entreprise. Simulation de l'architecture sous Cisco Packet Tracer puis déploiement et tests sur matériel physique réel.
+                    </p>
+                    
+                    <div class="mb-4 mt-2">
+                        <span class="skill-badge">Cisco Packet Tracer</span>
+                        <span class="skill-badge">Switchs / Routeurs</span>
+                        <span class="skill-badge">Câblage Physique</span>
+                    </div>
+
+                    <button class="btn btn-outline-primary btn-sm rounded-pill w-100" style="color: #5e84c0; border-color: #5e84c0;" data-bs-toggle="modal" data-bs-target="#modalProjet1">
+                        Voir les détails
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card project-card shadow-sm">
+                <img src="{{ asset('images/sae103.png') }}" alt="Carte de chaleur Wifi" class="project-img">
+                
+                <div class="card-body p-4 d-flex flex-column">
+                    <h3 class="h5 fw-bold mb-2">Audit de Couverture Wi-Fi</h3>
+                    <p class="text-warning small fw-bold mb-3">SAÉ 1.03</p>
+                    
+                    <p class="card-text text-muted flex-grow-1">
+                        Audit complet des réseaux sans-fil dans les bâtiments de l'IUT. Réalisation d'une cartographie (Heatmap) signalant la qualité du signal par code couleur.
+                    </p>
+                    
+                    <div class="mb-4 mt-2">
+                        <span class="skill-badge">Audit Wi-Fi</span>
+                        <span class="skill-badge">Cartographie</span>
+                        <span class="skill-badge">Analyse de Signal</span>
+                    </div>
+
+                    <button class="btn btn-outline-warning btn-sm rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#modalProjet2">
+                        Voir l'étude
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card project-card shadow-sm">
+                <img src="{{ asset('images/eportfolio.png') }}" alt="Code du site" class="project-img">
+                
+                <div class="card-body p-4 d-flex flex-column">
+                    <h3 class="h5 fw-bold mb-2">Portfolio Interactif</h3>
+                    <p class="text-dark small fw-bold mb-3">Développement Web</p>
+                    
+                    <p class="card-text text-muted flex-grow-1">
+                        Développement "From Scratch" de mon site personnel pour présenter mes compétences. Intégration de fonctionnalités avancées et design responsive.
+                    </p>
+                    
+                    <div class="mb-4 mt-2">
+                        <span class="skill-badge">Symfony 6</span>
+                        <span class="skill-badge">Twig / Bootstrap</span>
+                        <span class="skill-badge">Hébergement</span>
+                    </div>
+
+                    <button class="btn btn-outline-dark btn-sm rounded-pill w-100" data-bs-toggle="modal" data-bs-target="#modalProjet3">
+                        Détails techniques
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+
+<div class="modal fade" id="modalProjet1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0">
+            <div class="modal-header bg-bleu-perso">
+                <h5 class="modal-title fw-bold">SAÉ 1.02 : Création et Administration Réseau</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <h6 class="fw-bold text-uppercase text-muted mb-3">Description de la mission</h6>
+                <p>L'objectif était de concevoir l'architecture réseau d'une entreprise en expansion, en partant du cahier des charges jusqu'à la mise en production.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-bleu-perso"><i class="fas fa-laptop-code me-2"></i>Phase 1 : Simulation</h6>
+                        <ul class="small text-muted">
+                            <li>Modélisation de la topologie sur <strong>Cisco Packet Tracer</strong>.</li>
+                            <li>Configuration des VLANs et adressage IP.</li>
+                            <li>Tests de connectivité virtuels (Ping, Traceroute).</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-bleu-perso"><i class="fas fa-server me-2"></i>Phase 2 : Réalisation Physique</h6>
+                        <ul class="small text-muted">
+                            <li>Câblage réel des équipements en salle serveur.</li>
+                            <li>Configuration des switchs et routeurs physiques via console.</li>
+                            <li>Validation finale par tests de débit et de sécurité.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer bg-light border-0">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalProjet2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0">
+            <div class="modal-header bg-warning text-dark">
+                <h5 class="modal-title fw-bold">SAÉ 1.03 : Audit Wi-Fi & Cartographie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <h6 class="fw-bold text-uppercase text-muted mb-3">Contexte de l'audit</h6>
+                <p>Analyse de la qualité de la couverture sans-fil dans les locaux de l'IUT de Roanne pour identifier les zones blanches et les interférences.
+                Méthodologie et Outils : Pour réaliser cette cartographie, j'ai utilisé le testeur professionnel NetAlly AirCheck G2. 
+                Cet outil m'a permis d'effectuer des relevés précis de la puissance du signal et des interférences sur l'ensemble du campus.</p>
+                
+                <div class="alert alert-warning mt-3">
+                    <i class="fas fa-map-marked-alt me-2"></i><strong>Livrable clé : La Carte de Chaleur (Heatmap)</strong>
+                </div>
+                <p>J'ai réalisé un plan visuel des bâtiments utilisant un code couleur simple pour les utilisateurs :</p>
+                <ul class="list-unstyled mt-3">
+                    <li class="mb-2"><span class="badge bg-success me-2">VERT</span> <strong>Signal Excellent :</strong> Streaming HD et visio possibles.</li>
+                    <li class="mb-2"><span class="badge bg-warning text-dark me-2">JAUNE</span> <strong>Signal Moyen :</strong> Navigation web fluide, quelques latences.</li>
+                    <li class="mb-2"><span class="badge bg-danger me-2">ROUGE</span> <strong>Signal Faible / Inexistant :</strong> Zones à couvrir par de nouvelles bornes.</li>
+                </ul>
+            </div>
+            <div class="modal-footer bg-light border-0">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalProjet3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title fw-bold">Développement du Portfolio</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <h6 class="fw-bold text-uppercase text-muted mb-3">Conception d'une identité numérique</h6>
+                
+                <p>
+                    Plutôt que d'utiliser un modèle tout fait, j'ai choisi de développer ce portfolio <strong>"From Scratch"</strong> pour démontrer mes compétences en programmation web et en structure MVC.
+                </p>
+            
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-dark"><i class="fas fa-layer-group me-2"></i>Stack Technique</h6>
+                        <ul class="small text-muted">
+                            <li><strong>Framework :</strong> Symfony 6/7 (PHP 8).</li>
+                            <li><strong>Architecture :</strong> MVC (Modèle-Vue-Contrôleur).</li>
+                            <li><strong>Frontend :</strong> Twig, Bootstrap 5, CSS3.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="fw-bold text-dark"><i class="fas fa-magic me-2"></i>Fonctionnalités</h6>
+                        <ul class="small text-muted">
+                            <li>Système de routes et contrôleurs dynamiques.</li>
+                            <li>Design <strong>épuré et professionnel</strong> (UI/UX soignée).</li>
+                        
+                        </ul>
+                    </div>
+                </div>
+            
+                <div class="alert alert-dark mt-3 small">
+                    <i class="fas fa-terminal me-2"></i>Ce projet prouve ma capacité à lier <strong>l'administration système</strong> (hébergement, déploiement) et le <strong>développement applicatif</strong>.
+                </div>
+            </div>
+            <div class="modal-footer bg-light border-0">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
