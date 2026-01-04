@@ -124,7 +124,7 @@
         {% block body %}{% endblock %}
     </div>
 
-    <!-- Footer sticky -->
+    <!-- Footer -->
     {% include '_footer.html.twig' %}
 
 </div>
@@ -167,10 +167,7 @@
             // Effectue une rotation de la page (Le site se retourne)
             document.body.style.transition = "transform 2s ease-in-out";
             document.body.style.transform = "rotate(180deg)";
-            
-            // Optionnel : On peut jouer un petit son si vous avez un fichier audio
-            // let audio = new Audio('/sons/success.mp3');
-            // audio.play();
+        
         }
     });
 </script>
