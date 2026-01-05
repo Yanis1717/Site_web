@@ -36,17 +36,14 @@ class InscriptionController extends AbstractController
             ])
             ->getForm();
 
-        // 2. Gestion de la requête
         $form->handleRequest($request);
 
-        // 3. Si le formulaire est soumis et valide
+        // Si le formulaire est soumis et valide
         if ($form->isSubmitted() && $form->isValid()) {
-            // C'est ici que la magie opère.
-            // On ne sauvegarde RIEN (pas de DB).
-            // On récupère juste les données pour dire "Bonjour" (optionnel)
+            // On ne sauvegarde rien (pas de base de données).
             $data = $form->getData();
 
-            // On redirige vers une page "succès" ou on affiche la vue succès directement
+            // On redirige vers une page "succès"
             return $this->render('inscription/success.html.twig', [
                 'nom' => $data['nom'],
                 'prenom' => $data['prenom']
