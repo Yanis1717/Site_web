@@ -89,9 +89,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
     <div class="container">
         <a class="navbar-brand" href="{{ path('app_home') }}">Portfolio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item me-2">
@@ -119,7 +117,7 @@
 </nav>
 
 
-    <!-- Contenu principal -->
+
     <div class="content container flex-grow-1 my-5">
         {% block body %}{% endblock %}
     </div>
@@ -156,15 +154,13 @@
             currentInput.shift(); // Enlève la première touche (la plus vieille)
         }
 
-        // 4. On compare : est-ce que ce qu'a tapé l'utilisateur correspond au code secret ?
+        // 4. On compare le code secret avec les 10 dernières touches
         if (JSON.stringify(currentInput) === JSON.stringify(secretCode)) {
             
-            // ACTION : C'est ici que l'effet se déclenche !
-            
-            // Affiche une alerte sympa
+            // Affiche une alerte
             alert('🔒 MODE DÉVELOPPEUR DÉVERROUILLÉ ! \nAttention aux vertiges...');
             
-            // Effectue une rotation de la page (Le site se retourne)
+            // Rotation de la page
             document.body.style.transition = "transform 2s ease-in-out";
             document.body.style.transform = "rotate(180deg)";
         
