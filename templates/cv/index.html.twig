@@ -5,113 +5,82 @@
 {% block body %}
 
 <style>
-    /* 1. Couleurs du projet */
-    .text-bleu-rt { color: #5e84c0; }
-    .bg-bleu-rt { background-color: #5e84c0; color: white; }
-
-    /* 2. Style des titres de section */
-    .cv-section-title {
-        border-bottom: 2px solid #5e84c0;
-        padding-bottom: 5px;
+    /* On définit juste quelques couleurs pour rester cohérent */
+    .cv-bleu { color: #5e84c0; }
+    .cv-titre-boite {
+        background-color: #5e84c0;
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
         margin-bottom: 20px;
-        font-weight: bold;
     }
-
-    /* 3. Style des blocs (Expériences / Formations) */
-    .cv-item {
-        margin-bottom: 25px;
-        padding-left: 15px;
-        border-left: 3px solid #dee2e6; /* Ligne grise à gauche */
-        transition: border-left 0.3s ease;
-    }
-
-    .cv-item:hover {
-        border-left: 3px solid #5e84c0; /* La ligne devient bleue au survol */
-    }
-
-    /* 4. Petits badges pour les dates */
-    .cv-date {
-        font-size: 0.85rem;
-        font-weight: bold;
-        color: #6c757d;
+    .cv-cadre {
+        border: 1px solid #dee2e6;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #ffffff;
+        margin-bottom: 20px;
     }
 </style>
 
-<div class="container mt-5 mb-5">
-    
-    <div class="row align-items-center mb-5">
-        <div class="col-md-8">
-            <h1 class="display-5 fw-bold text-dark">Yanis LAÏD</h1>
-            <p class="lead text-bleu-rt fw-bold">ADMINISTRATEUR RÉSEAUX & SÉCURITÉ</p>
-            <p class="text-muted"><i class="fas fa-map-marker-alt me-2"></i>Roanne, France | <i class="fas fa-envelope me-2"></i>yanislaid8@gmail.com</p>
-        </div>
-        <div class="col-md-4 text-md-end">
-            <span class="badge bg-bleu-rt p-2 px-3">Alternance 2026-2027</span>
-        </div>
+<div class="container mt-4 mb-5">
+
+    <div class="cv-cadre text-center shadow-sm">
+        <h1 class="fw-bold">Yanis LAÏD</h1>
+        <h2 class="h4 cv-bleu">ADMINISTRATEUR RÉSEAUX & SÉCURITÉ</h2>
+        <p class="text-muted mb-0">Roanne, France | yanislaid8@gmail.com</p>
     </div>
 
     <div class="row">
-        <div class="col-lg-7">
+        <div class="col-md-8">
             
-            <h3 class="cv-section-title h5"><i class="fas fa-briefcase me-2 text-bleu-rt"></i>EXPÉRIENCES & PROJETS</h3>
-            
-            <div class="cv-item">
-                <div class="cv-date">2025 - PRÉSENT</div>
-                <h4 class="h6 fw-bold mb-1">Projets Tutorés (SAÉ)</h4>
-                <p class="small text-muted mb-2">IUT de Roanne</p>
-                <ul class="small">
-                    <li>Configuration d'équipements réseaux (Cisco).</li>
-                    <li>Déploiement de services sous Linux.</li>
-                    <li>Développement d'un site web dynamique (Portfolio).</li>
-                </ul>
+            <div class="cv-cadre shadow-sm">
+                <h3 class="h5 fw-bold mb-3 cv-bleu"><i class="fas fa-briefcase me-2"></i>EXPÉRIENCES</h3>
+                <div class="mb-3">
+                    <p class="fw-bold mb-0">Projets Tutorés (SAÉ) - IUT de Roanne</p>
+                    <small class="text-muted">2025 - Présent</small>
+                    <ul class="mt-2">
+                        <li>Configuration d'équipements réseaux (Cisco).</li>
+                        <li>Déploiement de services sous Linux.</li>
+                        <li>Développement d'un site web (Symfony).</li>
+                    </ul>
+                </div>
             </div>
 
-            <h3 class="cv-section-title h5 mt-5"><i class="fas fa-graduation-cap me-2 text-bleu-rt"></i>FORMATIONS</h3>
-
-            <div class="cv-item">
-                <div class="cv-date">2025 - PRÉSENT</div>
-                <h4 class="h6 fw-bold mb-1">BUT Réseaux et Télécommunications</h4>
-                <p class="small text-muted mb-0">IUT de Roanne</p>
+            <div class="cv-cadre shadow-sm">
+                <h3 class="h5 fw-bold mb-3 cv-bleu"><i class="fas fa-graduation-cap me-2"></i>FORMATIONS</h3>
+                <div class="mb-3">
+                    <p class="fw-bold mb-0">BUT Réseaux et Télécommunications</p>
+                    <small class="text-muted">2025 - Présent | IUT de Roanne</small>
+                </div>
+                <div>
+                    <p class="fw-bold mb-0">Baccalauréat Général</p>
+                    <small class="text-muted">2025 | Lycée Hippolyte Carnot (Mention AB)</small>
+                </div>
             </div>
 
-            <div class="cv-item">
-                <div class="cv-date">2025</div>
-                <h4 class="h6 fw-bold mb-1">Baccalauréat Général</h4>
-                <p class="small text-muted mb-0">Lycée Hippolyte Carnot - Spécialités SI / NSI / Maths</p>
-            </div>
         </div>
 
-        <div class="col-lg-5 ps-lg-5">
+        <div class="col-md-4">
             
-            <div class="p-4 bg-light rounded shadow-sm border">
-                <h3 class="h5 fw-bold mb-4">COMPÉTENCES</h3>
+            <div class="cv-cadre shadow-sm">
+                <h3 class="h5 fw-bold mb-3 cv-bleu">COMPÉTENCES</h3>
                 
-                <p class="small fw-bold mb-2">Développement Web</p>
-                <div class="mb-3">
-                    <span class="badge bg-white text-dark border me-1">HTML/CSS</span>
-                    <span class="badge bg-white text-dark border me-1">Symfony</span>
-                    <span class="badge bg-white text-dark border me-1">PHP</span>
-                </div>
+                <p class="fw-bold mb-1 small">Informatique</p>
+                <p class="small">HTML, CSS, Symfony, PHP, Cisco, Linux, Python.</p>
+                
+                <p class="fw-bold mb-1 small mt-3">Outils</p>
+                <p class="small">Git, Packet Tracer, VS Code.</p>
 
-                <p class="small fw-bold mb-2">Réseaux & Systèmes</p>
-                <div class="mb-3">
-                    <span class="badge bg-white text-dark border me-1">Cisco</span>
-                    <span class="badge bg-white text-dark border me-1">Linux</span>
-                    <span class="badge bg-white text-dark border me-1">Windows</span>
-                </div>
-
-                <p class="small fw-bold mb-2">Outils</p>
-                <div>
-                    <span class="badge bg-white text-dark border me-1">Git</span>
-                    <span class="badge bg-white text-dark border me-1">Packet Tracer</span>
-                </div>
+                <p class="fw-bold mb-1 small mt-3">Langue</p>
+                <p class="small">Anglais (Niveau B2).</p>
             </div>
 
-            <div class="mt-4 p-4 bg-white border rounded shadow-sm">
-                <h3 class="h5 fw-bold mb-3">ATOUTS</h3>
-                <ul class="list-unstyled small mb-0">
-                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Esprit d'équipe (Basket)</li>
-                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Rigueur (Piano)</li>
+            <div class="cv-cadre shadow-sm bg-light">
+                <h3 class="h5 fw-bold mb-3 cv-bleu">ATOUTS</h3>
+                <ul class="list-unstyled mb-0 small">
+                    <li><i class="fas fa-check text-success me-2"></i>Esprit d'équipe (Basket)</li>
+                    <li><i class="fas fa-check text-success me-2"></i>Rigueur (Piano)</li>
                     <li><i class="fas fa-check text-success me-2"></i>Curiosité technique</li>
                 </ul>
             </div>
