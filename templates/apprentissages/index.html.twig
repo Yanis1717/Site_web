@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Apprentissages Critiques - Yanis LAÏD{% endblock %}
+
+{% block body %}
+
+<style>
+    /* bleu personnalisé */
+    .text-bleu-perso { color: #5e84c0 !important; }
+    .bg-bleu-perso { background-color: #5e84c0 !important; color: white; }
+
+    /* Style des cartes projets */
+    .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        border-radius: 15px;
+        overflow: hidden; /* pour que l'image suive les bords arrondis */
+        height: 100%;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+    }
+
+    /* Style des images */
+    .project-img {
+        height: 200px;
+        object-fit: cover; /* L'image remplit la zone sans être déformée */
+        width: 100%;
+        border-bottom: 3px solid #5e84c0;
+    }
+
+    /* Badges */
+    .skill-badge {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+        border-radius: 20px;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        color: #495057;
+        font-weight: 600;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+</style>
+
+<div class="container mt-4">
+        <h1 class="text-center mb-5">Mes Apprentissages Critiques</h1>
+
+        <div class="row">
+            
+            <!-- APPRENTISSAGE CRITIQUE 1 -->
+            <div class="col-md-4">
+                <div class="card ac-card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">AC 11.03 : Configurer les fonctions de base du réseau local</h3>
+                        
+                        <hr>
+                        
+
+
+                        <!-- Boutons simples -->
+                        <div class="d-grid gap-2 mt-4">
+                            <a href="Preuve/AC11.03 S2.pdf" target="_blank" class="btn btn-primary">
+                                📄 Ouvrir la Preuve
+                            </a>
+                            <a href="Analyse/Analyse réflexive AC11.03 S2.pdf" target="_blank" class="btn btn-outline-primary">
+                                🧠 Ouvrir l'Analyse (PDF)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APPRENTISSAGE CRITIQUE 2 -->
+            <div class="col-md-4">
+                <div class="card ac-card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">AC 2 : [Titre]</h3>
+                        <p class="card-text fw-bold">Description courte de la compétence visée.</p>
+                        
+                        <hr>
+                        
+                        <h5>Mon analyse :</h5>
+                        <p class="small text-muted text-justify">
+                            Écris ton analyse réflexive directement ici. C'est plus simple pour le correcteur ou le recruteur, il n'a pas besoin de cliquer pour lire ta démarche.
+                        </p>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <a href="chemin/vers/ta_preuve_2.pdf" target="_blank" class="btn btn-primary">📄 Ouvrir la Preuve</a>
+                            <a href="chemin/vers/ton_analyse_2.pdf" target="_blank" class="btn btn-outline-primary">🧠 Ouvrir l'Analyse (PDF)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APPRENTISSAGE CRITIQUE 3 -->
+            <div class="col-md-4">
+                <div class="card ac-card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">AC 3 : [Titre]</h3>
+                        <p class="card-text fw-bold">Description courte de la compétence visée.</p>
+                        
+                        <hr>
+                        
+                        <h5>Mon analyse :</h5>
+                        <p class="small text-muted text-justify">
+                            Écris ton analyse réflexive directement ici. C'est plus simple pour le correcteur ou le recruteur, il n'a pas besoin de cliquer pour lire ta démarche.
+                        </p>
+
+                        <div class="d-grid gap-2 mt-4">
+                            <a href="chemin/vers/ta_preuve_3.pdf" target="_blank" class="btn btn-primary">📄 Ouvrir la Preuve</a>
+                            <a href="chemin/vers/ton_analyse_3.pdf" target="_blank" class="btn btn-outline-primary">🧠 Ouvrir l'Analyse (PDF)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

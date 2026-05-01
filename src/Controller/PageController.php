@@ -36,6 +36,12 @@ class PageController extends AbstractController
         return $this->render('loisirs/index.html.twig');
     }
     
+    #[Route('/Apprentissages', name: 'app_apprentissages')]
+    public function apprentissages(): Response
+    {
+        return $this->render('apprentissages/index.html.twig');
+    }
+
     #[Route('/inscription', name: 'app_inscription')]
     public function inscription(Request $request): Response
     {
