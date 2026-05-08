@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Apprentissages Critiques - Yanis LAÏD{% endblock %}
+
+{% block body %}
+
+<style>
+    /* bleu personnalisé */
+    .text-bleu-perso { color: #5e84c0 !important; }
+    .bg-bleu-perso { background-color: #5e84c0 !important; color: white; }
+
+    /* Style des cartes projets */
+    .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        border-radius: 15px;
+        overflow: hidden; /* pour que l'image suive les bords arrondis */
+        height: 100%;
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+    }
+
+    /* Style des images */
+    .project-img {
+        height: 200px;
+        object-fit: cover; /* L'image remplit la zone sans être déformée */
+        width: 100%;
+        border-bottom: 3px solid #5e84c0;
+    }
+
+    /* Badges */
+    .skill-badge {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+        border-radius: 20px;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        color: #495057;
+        font-weight: 600;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+    }
+</style>
+
+<div class="container mt-4">
+        <h1 class="text-center mb-5">Mes Apprentissages Critiques</h1>
+
+        <div class="row">
+            
+            <!-- APPRENTISSAGE CRITIQUE 1 -->
+            <div class="col-md-4">
+                <div class="card ac-card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">RT1 - Administrer les réseaux et l’Internet</h3>
+                        <hr>
+                        <!-- Boutons simples -->
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="btn btn-outline-light" type="button" onclick="location.href='{{ path('app_rt1preuve') }}'">
+                                📄 Ouvrir la Preuve
+                            </button>
+                            <button class="btn btn-outline-light" type="button" onclick="location.href='{{ path('app_rt1analyse') }}'">
+                                🧠 Ouvrir l'Analyse
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APPRENTISSAGE CRITIQUE 2 -->
+            <div class="col-md-4">
+                <div class="card ac-card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">RT2 - Connecter les entreprises et les usagers</h3>
+                        <hr>
+                        <!-- Boutons simples -->
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="btn btn-outline-light" type="button" onclick="location.href='{{ path('app_rt2preuve') }}'">
+                                📄 Ouvrir la Preuve
+                            </button>
+                            <button class="btn btn-outline-light" type="button" onclick="location.href='{{ path('app_rt2analyse') }}'">
+                                🧠 Ouvrir l'Analyse
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- APPRENTISSAGE CRITIQUE 3 -->
+            <div class="col-md-4">
+                <div class="card ac-card border-0 shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">RT3 - Créer des outils et des applications informatiques pour les R&T</h3>
+                        <hr>
+                        <!-- Boutons simples -->
+                        <div class="d-grid gap-2 mt-4">
+                            <button class="btn btn-outline-light" type="button" onclick="location.href='{{ path('app_rt3preuve') }}'">
+                                📄 Ouvrir la Preuve
+                            </button>
+                            <button class="btn btn-outline-light" type="button" onclick="location.href='{{ path('app_rt3analyse') }}'">
+                                🧠 Ouvrir l'Analyse
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

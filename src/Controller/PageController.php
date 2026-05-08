@@ -36,6 +36,52 @@ class PageController extends AbstractController
         return $this->render('loisirs/index.html.twig');
     }
     
+    #[Route('/Apprentissages', name: 'app_apprentissages')]
+    public function apprentissages(): Response
+    {
+        return $this->render('apprentissages/index.html.twig');
+    }
+
+#########################
+
+    #[Route('/RT1preuve', name: 'app_rt1preuve')]
+    public function RT1preuve(): Response
+    {
+        return $this->render('RT1/preuve/index.html.twig');
+    }
+
+    #[Route('/RT1analyse', name: 'app_rt1analyse')]
+    public function RT1analyse(): Response
+    {
+        return $this->render('RT1/analyse/index.html.twig');
+    }
+
+    #[Route('/RT2preuve', name: 'app_rt2preuve')]
+    public function RT2preuve(): Response
+    {
+        return $this->render('RT2/preuve/index.html.twig');
+    }
+
+    #[Route('/RT2analyse', name: 'app_rt2analyse')]
+    public function RT2analyse(): Response
+    {
+        return $this->render('RT2/analyse/index.html.twig');
+    }
+
+    #[Route('/RT3preuve', name: 'app_rt3preuve')]
+    public function RT3preuve(): Response
+    {
+        return $this->render('RT3/preuve/index.html.twig');
+    }
+
+    #[Route('/RT3nalyse', name: 'app_rt3analyse')]
+    public function RT3analyse(): Response
+    {
+        return $this->render('RT3/analyse/index.html.twig');
+    }
+
+##########################
+
     #[Route('/inscription', name: 'app_inscription')]
     public function inscription(Request $request): Response
     {
