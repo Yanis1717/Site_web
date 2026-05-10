@@ -5,27 +5,115 @@
 {% block body %}
 
 <style>
-    /* On définit juste quelques couleurs pour rester cohérent */
-    .cv-bleu { color: #5e84c0; }
-    .cv-titre-boite {
-        background-color: #5e84c0;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 20px;
-    }
-    .cv-cadre {
-        border: 1px solid #dee2e6;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: #ffffff;
-        margin-bottom: 20px;
-    }
+    .competence-header { 
+        margin-bottom: 40px; text-align: center;
+        }
+    .badge-ac { 
+        font-size: 0.9rem; margin: 2px;
+        }
 </style>
+<div class="competence-header">
+        <h1 class="display-4 text-primary">Compétence RT1</h1>
+        <h2 class="h4">Administrer les réseaux et l’Internet</h2>
+        <div class="mt-3">
+            <span class="badge rounded-pill bg-primary badge-ac">
+                AC 11.03 Configurer les fonctions de base du réseau local
+            </span>
+            <span class="badge rounded-pill bg-primary badge-ac">
+                AC11.04 Maîtriser les rôles et les principes fondamentaux 
+                des systèmes d’exploitation afin d’interagir avec ceux-ci 
+                pour la configuration et l’administration des réseaux et 
+                services fournis
+            </span>
+            <span class="badge rounded-pill bg-primary badge-ac">
+                AC11.05 Savoir identifier les dysfonctionnements du réseau 
+                local
+            </span>
+        </div>
+    </div>
+<div class="card border-0 shadow-sm mb-4">
+    <div class="card-header bg-dark text-white h5 rounded-top px-4 py-3">
+        🧠 Analyse Réflexive (Modèle de GIBBS)
+    </div>
+    <div class="card-body px-4 py-4">
 
-<div class="container mt-4 mb-5">
-    <h1 class="fw-bold">Yanis LAÏD</h1>
-    <p>Analyse RT1</p>
+        <div class="p-3 mb-4 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">1. Expérience</h5>
+            <p class="mb-0 text-primary-emphasis">
+                Lors de la SAé 2.01, j'ai eu pour mission de concevoir l'infrastructure 
+                réseau complexe d'une université répartie sur 4 sites (dans la continuité 
+                de la SAé 1.02). J'ai d'abord rédigé un programme en Python pour analyser 
+                mes plages d'adresses VLSM et repérer les chevauchements potentiels. 
+                Ensuite, j'ai configuré les équipements : VLANs, routage inter-VLAN, 
+                routage dynamique RIPv2 (sans auto-summary), le NAT/PAT, et les listes 
+                de contrôle d'accès (ACL 100, 120, 140). Le projet s'est clôturé par une 
+                mise en pratique sur du matériel physique lors du DS TP.
+            </p>
+        </div>
+
+        <div class="p-3 mb-4 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">2. Sentiments</h5>
+            <p class="mb-0 text-primary-emphasis">
+                J'ai ressenti une certaine pression lors du passage sur la maquette 
+                physique lors du DS TP. Contrairement à Cisco Packet Tracer, les erreurs 
+                de câblage ou de configuration se paient immédiatement. Cependant, voir 
+                le premier ping passer entre deux sites distants après avoir configuré 
+                le RIPv2 a été une source de grande satisfaction et a vraiment renforcé 
+                ma confiance en moi.
+            </p>
+        </div>
+
+        <div class="p-3 mb-4 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">3. Évaluation</h5>
+            <p class="mb-0 text-primary-emphasis">
+                La vérification de l'adressage avec mon script Python a été un vrai point 
+                fort, m'évitant de perdre du temps. La mise en place des VLANs et du routage 
+                inter-VLAN a également été rapide. En revanche, la phase la plus longue 
+                et compliquée a été la rédaction des ACL. Avec la quantité d'adresses de 
+                sous-réseaux, certaines ACL ne faisaient pas ce que je voulais au départ et 
+                c'était compliqué de s'y retrouver.
+            </p>
+        </div>
+
+        <div class="p-3 mb-4 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">4. Analyse</h5>
+            <p class="mb-0 text-primary-emphasis">
+                J'ai mobilisé mes connaissances en adressage et en routage dynamique.  
+                J'ai compris que face à un réseau complexe, il faut y aller par étapes. 
+                Pour résoudre mes problèmes d'ACL, j'ai dû procéder méthodiquement, en 
+                appliquant les règles une par une et en testant la connectivité entre chaque modification. 
+                J'ai aussi pris du recul sur ma méthode de dépannage : au début, je perdais 
+                beaucoup de temps en redémarrant les interfaces dès qu'un ping échouait, 
+                ce qui n'est pas une bonne méthode d'analyse.
+            </p>
+        </div>
+
+        <div class="p-3 mb-4 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">5. Conclusion</h5>
+            <p class="mb-0 text-primary-emphasis">
+                De cette expérience, je retiens que je maîtrise désormais la chaîne 
+                complète de configuration réseau : de la segmentation locale jusqu'à 
+                la sécurisation des accès et la sortie vers le WAN. Surtout, j'ai appris 
+                que la configuration ne fait pas tout : la phase de diagnostic est cruciale. 
+                Savoir interpréter une table de routage et identifier l'origine d'un défaut 
+                de connectivité est tout aussi important que de savoir taper les commandes.
+            </p>
+        </div>
+
+        <div class="p-3 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">6. Plan d'action</h5>
+            <p class="mb-0 text-primary-emphasis">
+                Mon principal point d'amélioration identifié est la rédaction des ACL. 
+                À l'avenir, je préparerai mes masques de sous-réseau avec encore plus de 
+                rigueur avant de configurer. De plus, j'ai pris la décision de ne plus 
+                redémarrer les interfaces à l'aveugle en cas de panne : je vais utiliser 
+                systématiquement les commandes de vérification ciblées, comme show ip nat 
+                translations ou show ip interface brief, pour voir exactement où les paquets 
+                sont bloqués.
+            </p>
+        </div>
+
+    </div>
 </div>
 
 {% endblock %}
