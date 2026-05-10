@@ -5,27 +5,124 @@
 {% block body %}
 
 <style>
-    /* On définit juste quelques couleurs pour rester cohérent */
-    .cv-bleu { color: #5e84c0; }
-    .cv-titre-boite {
-        background-color: #5e84c0;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 20px;
-    }
-    .cv-cadre {
-        border: 1px solid #dee2e6;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: #ffffff;
-        margin-bottom: 20px;
-    }
+    .competence-header { 
+        margin-bottom: 40px; text-align: center;
+        }
+    .badge-ac { 
+        font-size: 0.9rem; margin: 2px;
+        }
 </style>
 
-<div class="container mt-4 mb-5">
-    <h1 class="fw-bold">Yanis LAÏD</h1>
-    <p>Preuve RT1</p>
-</div>
+<div class="container">
+    <div class="competence-header">
+        <h1 class="display-4 text-primary">Compétence RT3</h1>
+        <h2 class="h4">
+            RT2 - Connecter les entreprises et les usagers
+        </h2>
+        <div class="mt-3">
+            <span class="badge rounded-pill bg-primary badge-ac">
+                AC12.01 Mesurer et analyser les signaux
+            </span>
+            <span class="badge rounded-pill bg-primary badge-ac">
+                AC12.02 Caractériser des systèmes de transmissions 
+                élémentaires et découvrir la modélisation mathématique de leur fonctionnement
+            </span>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="card border-light mb-4 shadow-sm">
+                <div class="card-header bg-primary text-white h5">📄 Document de Preuve</div>
+                <div class="card-body">
+                    <h5 class="text-primary">Contexte</h5>
+                    <p>
+                        La validation de cette compétence s'appuie sur les Travaux Pratiques 
+                        d'instrumentation (R2.05/R2.06) et sur le début de la SAé 2.02 
+                        (Dispositif de détection de fréquence). L'objectif global était 
+                        de comprendre, mesurer et filtrer des signaux électriques (analogiques 
+                        et numériques) pour caractériser des systèmes de transmission. 
+                        Le projet final consistait à utiliser un microcontrôleur Arduino 
+                        pour détecter une fréquence acoustique spécifique (160 Hz, le vol 
+                        d'un frelon asiatique) via un filtrage numérique.
+                    </p>
+                    <h5 class="text-primary">Connaissances mobilisées</h5>
+                    <ul>
+                        <li>
+                            Instrumentation : Maîtrise de l'oscilloscope numérique et 
+                            du Générateur Basses Fréquences (GBF) pour visualiser et 
+                            mesurer des signaux.
+                        </li>
+                        <li>
+                            Analyse de signaux : Étude fréquentielle et temporelle 
+                            (Filtres passe-bas, passe-bande, circuit RC).
+                        </li>
+                        <li>
+                            Mathématiques appliquées : Calcul de la fréquence de 
+                            résonance, des fréquences de coupure et de la constante de temps.
+                        </li>
+                        <li>
+                            Numérisation : Utilisation des convertisseurs Analogique-Numérique 
+                            (CAN) sur Arduino pour traiter un signal capté par un microphone.
+                        </li>
+                    </ul>
+                    <h5 class="text-primary">
+                        Savoir-être
+                    </h5>
+                    <ul>
+                        <li>
+                            Minutie : Câblage précis des composants sur platine d'essai et 
+                            réglage fin des échelles de l'oscilloscope.
+                        </li>
+                        <li>
+                            Rigueur scientifique : Confrontation systématique des résultats 
+                            théoriques avec les relevés expérimentaux.
+                        </li>
+                    </ul>
+                    <h5 class="text-primary">Tâche réalisée et résultats</h5>
+                    <ul>
+                        <li>
+                            Caractérisation de filtres : Mesure de l'atténuation d'un signal 
+                            en fonction de sa fréquence. Pour le filtre passe-bande, 
+                            j'ai identifié expérimentalement la fréquence de résonance à 
+                            environ 7200 Hz, ce qui correspondait parfaitement à mon calcul 
+                            théorique de 7341 Hz.
+                        </li>
+                        <li>
+                            Régime transitoire : Analyse de la charge/décharge d'un 
+                            condensateur avec mesure du temps de réponse.
+                        </li>
+                        <li>
+                            SAé 2.02 : Mise en place d'un système capable 
+                            de lire une entrée analogique, de lui appliquer un algorithme 
+                            de filtrage (passe-haut/passe-bas) et de déclencher une LED 
+                            lorsque la fréquence cible (160 Hz) est détectée par le microphone.
+                        </li>
+                    </ul>
+                    <h5 class="text-primary">
+                        Visuels
+                    </h5>
+                    <img src="{{ asset('images/RT2/signal.png') }}" alt="signal" class="img-fluid rounded">
+                    <p>
+                        Oscilloscope montrant le signal d'entrée et de sortie 
+                    </p>
+                    <img src="{{ asset('images/RT2/schema.png') }}" alt="schema" class="img-fluid rounded">
+                    <p>
+                        Schéma d'un circuit RC
+                    </p>
+                    <img src="{{ asset('images/RT2/circuit.png') }}" alt="circuit" class="img-fluid rounded">
+                    <p>
+                        Circuit RC
+                    </p>
+
+                    <h5 class="text-primary">Points à améliorer</h5>
+                    <p>
+                        Améliorer la transition entre la théorie mathématique (fonctions de transfert) 
+                        et le code informatique sur l'Arduino.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

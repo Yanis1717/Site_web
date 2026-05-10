@@ -1,31 +1,119 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Analyse RT1 - Yanis LAÏD{% endblock %}
+{% block title %}Analyse RT3 - Yanis LAÏD{% endblock %}
 
 {% block body %}
 
 <style>
-    /* On définit juste quelques couleurs pour rester cohérent */
-    .cv-bleu { color: #5e84c0; }
-    .cv-titre-boite {
-        background-color: #5e84c0;
-        color: white;
-        padding: 10px;
-        border-radius: 5px;
-        margin-bottom: 20px;
-    }
-    .cv-cadre {
-        border: 1px solid #dee2e6;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: #ffffff;
-        margin-bottom: 20px;
-    }
+    .competence-header { 
+        margin-bottom: 40px; text-align: center;
+        }
+    .badge-ac { 
+        font-size: 0.9rem; margin: 2px;
+        }
 </style>
+<div class="competence-header">
+        <h1 class="display-4 text-primary">Compétence RT3</h1>
+        <h2 class="h4">
+            RT3 - Créer des outils et des applications informatiques 
+            pour les R&T
+        </h2>
+        <div class="mt-3">
+            <span class="badge rounded-pill bg-primary badge-ac">
+                AC13.01 Utiliser un système informatique et ses outils
+            </span>
+            <span class="badge rounded-pill bg-primary badge-ac">
+                AC13.02 Lire, exécuter, corriger et modifier un programme
+            </span>
+            <span class="badge rounded-pill bg-primary badge-ac">
+                AC13.03 Traduire un algorithme, dans un langage et pour 
+                un environnement donné
+            </span>
+            <span class="badge rounded-pill bg-primary badge-ac">
+                AC13.04 Connaître l’architecture et les technologies d’un site Web
+            </span>
+        </div>
+    </div>
+<div class="card border-0 shadow-sm mb-4">
+    <div class="card-header bg-dark text-white h5 rounded-top px-4 py-3">
+        🧠 Analyse Réflexive (Modèle de GIBBS)
+    </div>
+    <div class="card-body px-4 py-4">
 
-<div class="container mt-4 mb-5">
-    <h1 class="fw-bold">Yanis LAÏD</h1>
-    <p>Analyse RT1</p>
+        <div class="p-3 mb-4 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">1. Expérience</h5>
+            <p class="mb-0 text-primary-emphasis">
+                Dans le cadre de la SAé 2.04, j'ai déployé un serveur web Apache sous Debian 
+                pour héberger une application Symfony. Ma tâche principale a été d'analyser 
+                le code existant (architecture MVC) pour comprendre comment un formulaire HTML 
+                communiquait avec un script Python en arrière-plan. J'ai ensuite modifié la Vue 
+                (Twig) et le Contrôleur (PHP) pour intégrer de nouveaux paramètres (rotation, 
+                déplacement) destinés à un nouveau programme de génération d'art algorithmique. 
+                J'en ai profité pour ajouter des fonctionnalités ergonomiques comme la mémorisation 
+                des saisies et un bouton de téléchargement.
+            </p>
+        </div>
+
+        <div class="p-3 mb-4 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">2. Sentiments</h5>
+            <p class="mb-0 text-primary-emphasis">
+                Au début, j'ai ressenti de l'appréhension face à la structure imposante de Symfony 
+                et à la quantité de fichiers. J'avais peur de modifier un élément qui ferait "crasher" 
+                le site. Cependant, une fois la logique MVC comprise (qui appelle qui ?), 
+                j'ai mené mon enquête dans le code avec beaucoup de curiosité. Réussir à faire 
+                interagir une interface web que j'avais modifiée avec un script système en Python 
+                m'a procuré une grande satisfaction.
+            </p>
+        </div>
+
+        <div class="p-3 mb-4 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">3. Évaluation</h5>
+            <p class="mb-0 text-primary-emphasis">
+                Ce qui a particulièrement bien fonctionné, c'est l'adaptation de l'interface 
+                utilisateur : le passage aux curseurs de type range et la mémorisation des variables 
+                ont rendu le site beaucoup plus agréable à utiliser. En revanche, l'installation 
+                initiale du serveur et la gestion des droits Linux (comme l'utilisateur www-data 
+                nécessaire pour écrire l'image sur le disque) ont demandé beaucoup de rigueur et 
+                de temps de débogage.
+            </p>
+        </div>
+
+        <div class="p-3 mb-4 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">4. Analyse</h5>
+            <p class="mb-0 text-primary-emphasis">
+                J'ai mobilisé mes connaissances en systèmes Linux et en langages de programmation 
+                (PHP, Python, HTML). Le concept d'architecture MVC a été la clé : il m'a appris à 
+                séparer l'affichage (la Vue) de la logique de traitement (le Contrôleur). J'ai 
+                aussi compris que le développement web ne s'arrête pas au code : la configuration 
+                du serveur (comme la sécurisation par .htaccess que j'ai mise en place) est 
+                indissociable du fonctionnement de l'application.
+            </p>
+        </div>
+
+        <div class="p-3 mb-4 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">5. Conclusion</h5>
+            <p class="mb-0 text-primary-emphasis">
+                De cette expérience, je retiens que la programmation en R&T n'est pas isolée : 
+                c'est un ensemble de technologies qui communiquent entre elles (Client Web -> 
+                Serveur Apache -> Script PHP -> Exécutable Python). Savoir lire, comprendre 
+                et modifier un programme existant est une compétence tout aussi importante 
+                que de savoir écrire un code de zéro.
+            </p>
+        </div>
+
+        <div class="p-3 bg-light rounded-4 border-start border-5 border-primary shadow-sm">
+            <h5 class="text-primary fw-bold mb-2">6. Plan d'action</h5>
+            <p class="mb-0 text-primary-emphasis">
+                Pour mes futurs projets de développement, je vais m'efforcer de documenter 
+                systématiquement mon code avec des commentaires, car j'ai vu à quel point 
+                il est difficile de se plonger dans le code d'un autre sans explications. 
+                Je prévois également de m'entraîner à créer mes propres petites applications 
+                web avec Symfony pour maîtriser la création des routes et des 
+                contrôleurs depuis le début.
+            </p>
+        </div>
+
+    </div>
 </div>
 
 {% endblock %}
